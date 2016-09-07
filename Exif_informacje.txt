@@ -1,0 +1,49 @@
+Ligthroom czyta do filtrowania parametr 'Lens' z exifa. Mo¿na go ustawiæ poleceniem
+
+exiftool.exe -Lens="Sigma 17-50mm 2.8" *.JPG
+
+Polecenie 
+
+exiftool.exe -Lens* *.jpg listuje wszystkie parametry zaczynaj¹ce siê na Lens z plików jpg.
+
+Windows we w³aœciwoœciach pliku podaje informacje o szkle z XMP.
+I tak chc¹c ustawiæ producenta obiektywu nale¿y wydaæ polecenie:
+
+exiftool.exe -xmp:lensmanufacturer=Sigma IMGP1457.jpg
+
+natomiast model obiektywu:
+
+exiftool.exe -xmp:lensmodel="Sigma 17-50mm f2.8" IMGP1458.JPG
+
+Tagi XMP: http://exiftool.sourceforge.net/TagNames/XMP.html
+
+
+Warunkowa zamiana:
+exiftool.exe -if "$LensType eq 'Sigma 17-50mm F2.8 EX DC HSM'" "-xmp:lensmanufacturer=Sigma" *.JPG
+
+exiftool.exe -if "$LensType eq 'Sigma 17-50mm F2.8 EX DC HSM'" "-Lens=Sigma 17-50mm F2.8 EX DC HSM" *.JPG
+
+Zapis listy zdjêæ do pliku:
+
+exiftool.exe -T -r -filename -Lenstype -ISO work1 > out.txt
+
+skanuje folder work1 (rekursywnie czyli tak¿e jego podkatalogi) i zapisuje tagi do pliku oddzielone tabulatorem.
+
+Wiêcej: http://owl.phy.queensu.ca/~phil/exiftool/faq.html
+
+Dodawanie tagów z nazw folderów:
+
+exiftool -sep "/" "-subject<${directory;s(/',')()}" -r DIR
+
+lub proœciej
+
+exiftool -sep "/" "-subject<$directory" -r DIR
+
+dodaje wiele tagów razem z folderem nadrzêdnym
+
+exiftool -sep " " "-subject<${directory;s(.*/)()}" -r DIR
+
+dodaje po jednym tagów nazwy folderu w którym siê znajduje
+
+Wiêcej: http://u88.n24.queensu.ca/exiftool/forum/index.php/topic,7386.msg37485.html#msg37485
+

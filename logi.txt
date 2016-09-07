@@ -1,0 +1,48 @@
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>cd ..
+
+C:\Users\Marcin\Desktop\ExifTest\work3>exiftool "-testname<CreateDate" test2
+Nazwa 'exiftool' nie jest rozpoznawana jako polecenie wewnêtrzne lub zewnêtrzne,
+
+program wykonywalny lub plik wsadowy.
+
+C:\Users\Marcin\Desktop\ExifTest\work3>exiftool "-testname<CreateDate" test2
+'test2/20160519-IMGP1425.DNG' --> 'test2/2016:05:19 14:26:19'
+Warning: No writable tags set from test2/20160519-IMGP1425.gif
+Warning: Bad SubIFD SubDirectory start - test2/20160519-IMGP1425.jpg
+Warning: File 'test2/2016:05:19 14:26:19' would exist - test2/20160519-IMGP1425.
+jpg
+Warning: No writable tags set from test2/20160519-IMGP1425.tif
+'test2/IMGP4875 - Kopia.JPG' --> 'test2/2016:09:01 08:05:50'
+Warning: File 'test2/2016:09:01 08:05:50' would exist - test2/IMGP4875.DNG
+    1 directories scanned
+    0 image files updated
+    6 image files unchanged
+
+C:\Users\Marcin\Desktop\ExifTest\work3>exiftool "-testname<CreateDate" test2
+'test2/20160519-IMGP1425.DNG' --> 'test2/2016:05:19 14:26:19'
+'test2/IMGP4875 - Kopia.JPG' --> 'test2/2016:09:01 08:05:50'
+Warning: File 'test2/2016:09:01 08:05:50' would exist - test2/IMGP4875.DNG
+    1 directories scanned
+    0 image files updated
+    3 image files unchanged
+
+C:\Users\Marcin\Desktop\ExifTest\work3>exiftool -d %Y%m%d_test.%%e "-testname<Cr
+eateDate" test2
+'test2/20160519-IMGP1425.DNG' --> 'test2/20160519_test.DNG'
+'test2/IMGP4875 - Kopia.JPG' --> 'test2/20160901_test.JPG'
+'test2/IMGP4875.DNG' --> 'test2/20160901_test.DNG'
+    1 directories scanned
+    0 image files updated
+    3 image files unchanged
+
+C:\Users\Marcin\Desktop\ExifTest\work3>exiftool "-testname<%f_$imagesize.%e" tes
+t2
+'test2/20160519-IMGP1425.DNG' --> 'test2/20160519-IMGP1425_4960x3300.DNG'
+'test2/IMGP4875 - Kopia.JPG' --> 'test2/IMGP4875 - Kopia_4928x3264.JPG'
+'test2/IMGP4875.DNG' --> 'test2/IMGP4875_4960x3300.DNG'
+    1 directories scanned
+    0 image files updated
+    3 image files unchanged
+
+C:\Users\Marcin\Desktop\ExifTest\work3>

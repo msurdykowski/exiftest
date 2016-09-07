@@ -1,0 +1,49 @@
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /convert=*_raw.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /convert=test.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /convert=test*.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /convert=test*1.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /convert=test[*]1.jp
+g
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /convert=test[*]1.jp
+g
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /convert=test.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /jpgq=90 /convert=te
+st.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /jpgq=100 /convert=t
+est.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 *.dng /jpgq=100 /convert=$
+D$N.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 2016*.dng /jpgq=100 /conve
+rt=$D$N.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 2016*.dng /jpgq=100 /conve
+rt=$D$N.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>i_view32 2016*.dng /jpgq=100 /conve
+rt=*.jpg
+
+C:\Users\Marcin\Desktop\ExifTest\work3\test2>
+
+
+
+Example for /jpgq:
+  i_view32.exe c:\test.jpg /jpgq=75 /convert=c:\new.jpg
+  => Open 'c:\test.jpg' and save it as c:\new.jpg, quality = 75
+  Quality range: 1 - 100.
+
+Example for /tifc:
+  i_view32.exe c:\test.jpg /tifc=4 /convert=c:\new.tif
+  => Open 'c:\test.jpg' and save it as c:\new.tif, compression = Fax4
+  Compressions: 0 = None, 1 = LZW, 2 = Packbits, 3 = Fax3, 4 = Fax4, 5 = Huffman, 
+  6 = JPG, 7 = ZIP
